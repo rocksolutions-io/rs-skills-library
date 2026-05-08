@@ -37,9 +37,9 @@ That's all. Do not ask about Python version, Blender internals, or file structur
 
 Write files directly to Blender's addons folder — no ZIP install loop during development.
 
-**Mac path for Blender 5.0+:**
+**Mac path for Blender 5.1+:**
 ```
-~/Library/Application Support/Blender/5.0/scripts/addons/<addon_name>/
+~/Library/Application Support/Blender/5.1/scripts/addons/<addon_name>/
 ```
 
 After writing files, tell Rockson:
@@ -47,7 +47,7 @@ After writing files, tell Rockson:
 
 At the end, also generate a ZIP of the addon folder for archiving:
 ```bash
-cd ~/Library/Application\ Support/Blender/5.0/scripts/addons/
+cd ~/Library/Application\ Support/Blender/5.1/scripts/addons/
 zip -r <addon_name>_v<version>.zip <addon_name>/
 ```
 
@@ -77,7 +77,7 @@ Add `utils.py` only if there are shared helper functions used across files.
 # ============================================================
 # <ADDON NAME>
 # Version: 0.1.0
-# Blender: 5.0+
+# Blender: 5.1+
 # Author: Rockson Chan
 # Description: <one-line description>
 # ============================================================
@@ -89,7 +89,7 @@ bl_info = {
     "name": "<Addon Name>",
     "author": "Rockson Chan",
     "version": (0, 1, 0),
-    "blender": (5, 0, 0),
+    "blender": (5, 1, 0),
     "location": "<Panel location — e.g., View3D > Sidebar > My Tab>",
     "description": "<Short description>",
     "category": "<Category — e.g., Object, Mesh, Scene>",
@@ -436,7 +436,7 @@ The templates above already handle this correctly. Do not skip `del bpy.types.Sc
 ## Notes for Claude
 
 - Rockson is not a professional developer. Keep code readable, avoid clever tricks.
-- He works on Mac with Blender 5.0+. Mac path is `~/Library/Application Support/Blender/5.0/scripts/addons/`.
+- He works on Mac with Blender 5.1.1. Mac path is `~/Library/Application Support/Blender/5.1/scripts/addons/`.
 - Always write files to the dev folder path, not just generate them in conversation.
 - Always include the version stamp in the panel UI — this is a hard requirement.
 - Always include the CHANGELOG block in `__init__.py`.
